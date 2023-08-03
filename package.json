@@ -5,7 +5,7 @@
     "main": "main.js",
     "scripts": {
         "dev": "nodemon main.js",
-        "start": "npm run generatedData && node main.js",
+        "start": "node main.js", 
         "test": "echo \"Error: no test specified\" && exit 1",
         "generatedData": "node generatedData.js"
     },

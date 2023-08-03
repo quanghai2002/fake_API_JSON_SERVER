@@ -69,16 +69,37 @@ function productsList(categoriesList, numberOfProducts) {
 
 }
 
-const categoriesList = randomCaterogyList(5)
-const products = productsList(categoriesList, 5)
+function profileList(n) {
+    const profileLists = [];
+    if (n <= 0) {
+        return []
+    }
+    Array.from(new Array(n)).forEach((item) => {
+        let profile = {
+            id: faker.string.uuid(),
+            fullName: faker.person.fullName(),
+            createdAt: Date.now(),
+            updateAt: Date.now(),
+            gender: faker.person.gender(),
+            avatar: faker.image.avatar(),
+            birthdate: faker.date.birthdate(),
+            email: faker.internet.email(),
+        };
+        profileLists.push(profile)
+    })
+
+    return profileLists;
+}
+
+const categoriesList = randomCaterogyList(30)
+const products = productsList(categoriesList, 30)
+const profile = profileList(100)
 
 // prepare (chuan bi) db object
 const db = {
     categories: categoriesList,
     products: products,
-    profile: [{
-        name: 'Hai'
-    }],
+    profile: profile,
 };
 
 
