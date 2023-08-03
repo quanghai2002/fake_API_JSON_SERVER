@@ -1,0 +1,41 @@
+
+@baseURL = http://localhost:3000/api
+
+
+# @name getAllComments
+GET {{baseURL}}/categories
+
+
+######
+
+# @name addNewComments
+POST  {{baseURL}}/categories
+Content-Type: application/json
+
+{ "id": 2002,
+    "name": "Quang Hai2"
+}
+
+
+######
+
+# @name updateNewComments
+PATCH   {{baseURL}}/categories/2002
+Content-Type: application/json
+
+  {
+  
+    "name": "Nguyen Quang Hai"
+    
+  }
+
+
+######
+
+# @name removeNewComments
+DELETE  {{baseURL}}/categories/2
+Content-Type: application/json
+
+
+
+

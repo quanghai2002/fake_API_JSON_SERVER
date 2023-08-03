@@ -1,0 +1,59 @@
+
+@baseURL = http://localhost:3000/api
+
+@resourceName =products
+
+#Products
+# @name getAll
+GET {{baseURL}}/{{resourceName}}
+
+######
+
+
+# filter products
+GET {{baseURL}}/{{resourceName}}?price_gte=100&price_lte=600&_sort=price&_order=asc
+
+
+#### products pagination
+# @name pagination
+GET {{baseURL}}/{{resourceName}}?_page=1&_limit=3
+
+
+
+
+####
+
+# @name addNew
+POST  {{baseURL}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "name":"comment 1",
+       "postId": 2
+}
+
+
+######
+
+# @name update
+PATCH   {{baseURL}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "categoryId": "99d2b7e7-a6b8-41b3-b301-2d27ec56fb78",
+    "name": "Garden",
+    "price": 2002,
+    "descreption": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+    "thumbnaiUrl": "https://loremflickr.com/400/400"
+  }
+
+
+######
+
+# @name remove
+DELETE  {{baseURL}}/{{resourceName}}/2
+Content-Type: application/json
+
+
+
+
